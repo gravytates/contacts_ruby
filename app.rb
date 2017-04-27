@@ -13,13 +13,25 @@ get('/contact/new') do
   erb(:contact_form)
 end
 
+
 post('/contact') do
   first_name = params.fetch('first_name')
   last_name = params.fetch('last_name')
   job_title = params.fetch('job_title')
   company = params.fetch('company')
-  @contact = Contact.new({:first_name => 'Fred', :last_name => 'Smith', :job_title => 'Lawn Mower', :company => 'Self Employed'})
+  @contact = Contact.new({:first_name => first_name, :last_name => last_name, :job_title => job_title, :company => company})
   @contact.save()
+
   redirect('/')
   erb(:index)
+end
+
+get('/contact_list') do
+  @contacts = Contact.all
+  erb(:contact_list)
+end
+
+get('/contact_list/:id') do
+  @contact = Contact.find(params.fetch('id').to_i)
+  erb(:contact_details)
 end
