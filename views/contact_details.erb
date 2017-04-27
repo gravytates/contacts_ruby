@@ -13,16 +13,18 @@
   Company: <%= @contact.company() %>
 </h3>
 
-<%#
-<ul>
-  <% @contacts.each() do |contact| %>
-  <%#  <li><a href="/contact_list/<%= contact.id() %>
-  <%#"><%= contact.address stuff() %>
-<%#</a></li> %>
 
-<%#  <% end %>
-<%#</ul>
-%>
+<ul>
+      <% @contact.addresses.each() do |address| %>
+        <li><%= address.street() %></li>
+        <li><%= address.city() %></li>
+        <li><%= address.state() %></li>
+        <li><%= address.zip() %></li>
+        <li><%= address.type() %></li>
+      <% end %>
+</ul>
+
+
 
 
 

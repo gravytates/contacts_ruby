@@ -1,5 +1,5 @@
 class Contact
-  attr_accessor(:first_name, :last_name, :job_title, :company, :id)
+  attr_accessor(:first_name, :last_name, :job_title, :company, :id, :addresses, :emails, :phones)
   @@contacts = []
 
   define_method(:initialize) do |attributes|
