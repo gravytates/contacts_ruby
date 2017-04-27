@@ -1,8 +1,20 @@
-<form class="" action="index.html" method="post">
+<form action="/contact_list/<%= @contact.id %>/add_address/new_address" method="post">
 
   <label for="address">Address:</label>
-  <input placeholder="street" id="street" name="address" type="text">
-  <input placeholder="city" id="city" name="address" type="text">
-  <input placeholder="state" id="state" name="address" type="text">
-  <input placeholder="zip" id="zip" name="address" type="number">
-</form> 
+  <input name='contact_id' type='hidden' value='<%= @contact.id() %>'> <!-- Hidden div to tye id to email... maybe?? -->
+  <input placeholder="street" name="street">
+  <input placeholder="city" name="city">
+  <input placeholder="state" name="state">
+  <input placeholder="zip" name="zip">
+  <label for="type" name="type">Type:</label>
+    <br>
+    <select name="type">
+      <option>Home</option>
+      <option>Work</option>
+    </select>
+
+  <button type="submit">Add Address</button>
+</form>
+
+
+<a href="/contact_list/<%= @contact.id() %>">Add Address</a><br>

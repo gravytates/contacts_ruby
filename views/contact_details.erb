@@ -13,10 +13,20 @@
   Company: <%= @contact.company() %>
 </h3>
 
+<%#
+<ul>
+  <% @contacts.each() do |contact| %>
+  <%#  <li><a href="/contact_list/<%= contact.id() %>
+  <%#"><%= contact.address stuff() %>
+<%#</a></li> %>
+
+<%#  <% end %>
+<%#</ul>
+%>
 
 
 
 <a href="/contact_list">Back</a><br>
-<a href="/contact_list/:id/add_address">Add mailing address</a>
-<a href="/contact_list/:id/add_email">Add email address</a>
-<a href="/contact_list/:id/add_phone">add phone numbers</a>
+<a href="/contact_list/<%= @contact.id %>/add_address">Add mailing address</a>
+<a href="/contact_list/<%= @contact.id %>/add_email">Add email address</a>
+<a href="/contact_list/<%= @contact.id %>/add_phone">add phone numbers</a>
