@@ -1,0 +1,22 @@
+<h1>Contact Details</h1>
+
+<h3>
+  First name: <%= @contact.first_name() %>
+</h3>
+<h3>
+  Last name: <%= @contact.last_name() %>
+</h3><hr>
+<h3>
+  Job Title: <%= @contact.job_title() %>
+</h3><br>
+<h3>
+  Company: <%= @contact.company() %>
+</h3>
+
+
+
+
+<a href="/contact_list">Back</a><br>
+<a href="/contact_list/:id/add_address">Add mailing address</a>
+<a href="/contact_list/:id/add_email">Add email address</a>
+<a href="/contact_list/:id/add_phone">add phone numbers</a>
