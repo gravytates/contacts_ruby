@@ -13,16 +13,21 @@
   Company: <%= @contact.company() %>
 </h3>
 
+<% if @contact.addresses != [] %>
+  <h3>Address(es)</h3>
+<% end %>
+  <% @contact.addresses.each() do |address| %>
 
-<ul>
-      <% @contact.addresses.each() do |address| %>
-        <li><%= address.street() %></li>
-        <li><%= address.city() %></li>
-        <li><%= address.state() %></li>
-        <li><%= address.zip() %></li>
-        <li><%= address.type() %></li>
-      <% end %>
-</ul>
+  <p>Address type: <%= address.type() %></p>
+  <ul>
+    <li><%= address.street() %></li>
+    <li><%= address.city() %></li>
+    <li><%= address.state() %></li>
+    <li><%= address.zip() %></li>
+    <li><%= address.type() %></li>
+  </ul>
+    <hr>
+  <% end %>
 
 
 
