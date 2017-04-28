@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Edit and View Contacts</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <div class="container">
+      
+
+<form action="/contact_list/1/add_address/new_address" method="post">
+
+  <label for="address">Address:</label>
+  <input name='contact_id' type='hidden' value='1'> <!-- Hidden div to tye id to email... maybe?? -->
+  <input placeholder="street" id="street" name="street">
+  <input placeholder="city" name="city">
+  <input placeholder="state" name="state">
+  <input placeholder="zip" name="zip">
+  <label for="type" name="type">Type:</label>
+    <br>
+    <select name="type">
+      <option>Home</option>
+      <option>Work</option>
+    </select>
+
+  <button type="submit">Add Address</button>
+</form>
+
+    </div>
+  </body>
+</html>

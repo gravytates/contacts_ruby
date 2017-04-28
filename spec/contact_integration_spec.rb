@@ -18,12 +18,12 @@ end
 describe('add address route', {:type => :feature}) do
   it("allows another address to be added to the form") do
     @contact = Contact.new({:first_name => 'Bob', :last_name => 'Jo', :job_title => "lawn mower", :company => 'self employed'})
-    visit("/contact_list/#{ @contact.id }/add_address") ## requires double quotes for interpolation to work.
+
+    visit("/contact_list/1/add_address") ## requires double quotes for interpolation to work.
     fill_in('street', :with => '123 who cares')
     fill_in('city', :with => 'hometon')
     fill_in('state', :with => 'portland')
     fill_in('zip', :with => '97222')
-    fill_in('type', :with => 'home')
-    expect(page).to have_content("Contact hub")
+    expect(page).to have_content("Address")
   end
 end

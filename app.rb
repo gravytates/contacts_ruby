@@ -38,7 +38,7 @@ post('/contact_list/:id/add_address/new_address') do
   state = params.fetch('state')
   zip = params.fetch('zip')
   type = params.fetch('type')
-
+binding.pry
   @address = Address.new({:street => street, :city => city, :state => state, :zip => zip, :type => type})
   @address.save()
   @contact = Contact.find(params.fetch('id').to_i())
